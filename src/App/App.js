@@ -28,8 +28,12 @@ class App extends Component {
             <div>
                 <Router history={history}>
                   <Switch>
-                      <Route path="/About" component={AboutPage} />
-                      <Route path="/Admin" component={AdminPage} />
+                      <Route path="/About" render={() => (
+                          <AboutPage />
+                      )} />
+                      <Route path="/Admin" render={() => (
+                          <AdminPage />
+                      )} />
                       <Route path="/login" component={LoginPage} />
                       <Route path="/register" component={RegisterPage} />   
                       <Route path="/horsedetail" component={HorseDetailPage} />
