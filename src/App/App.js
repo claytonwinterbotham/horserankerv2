@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, Router } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { AdminPage } from '../AdminPage';
 import { HorseListPage } from '../HorseListPage';
 import { HorseDetailPage } from '../HorseDetailPage';
@@ -25,23 +25,17 @@ class App extends Component {
 
     render() {
         return(
-            <div>
-                <Router history={history}>
-                  <Switch>
-                      <Route path="/About" render={() => (
-                          <AboutPage />
-                      )} />
-                      <Route path="/Admin" render={() => (
-                          <AdminPage />
-                      )} />
-                      <Route path="/login" component={LoginPage} />
-                      <Route path="/register" component={RegisterPage} />   
-                      <Route path="/horsedetail" component={HorseDetailPage} />
-                      <Route path="/horsedata" component={HorseListPage} />
-                      <Route exact path="/" component={HomePage} />
-                  </Switch>
-                </Router>
-            </div>    
+            <BrowserRouter history={history}>
+                <Switch>
+                    <PrivateRoute path="/about" component={AboutPage} />
+                    <PrivateRoute path="/admin" component={AdminPage} />
+                    <Route path="/login" component={LoginPage} />
+                    <Route path="/register" component={RegisterPage} />   
+                    <PrivateRoute path="/horsedetail" component={HorseDetailPage} />
+                    <PrivateRoute path="/horsedata" component={HorseListPage} />
+                    <PrivateRoute exact path="/" component={HomePage} />
+                </Switch>    
+            </BrowserRouter>  
         );
     }
 }
