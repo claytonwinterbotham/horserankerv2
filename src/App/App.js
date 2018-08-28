@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, Router } from 'react-router-dom';
 import { AdminPage } from '../AdminPage';
 import { HorseListPage } from '../HorseListPage';
 import { HorseDetailPage } from '../HorseDetailPage';
@@ -25,7 +25,7 @@ class App extends Component {
 
     render() {
         return(
-            <BrowserRouter history={history}>
+            <Router history={history}>
                 <Switch>
                     <PrivateRoute path="/about" component={AboutPage} />
                     <PrivateRoute path="/admin" component={AdminPage} />
@@ -35,7 +35,7 @@ class App extends Component {
                     <PrivateRoute path="/horsedata" component={HorseListPage} />
                     <PrivateRoute exact path="/" component={HomePage} />
                 </Switch>    
-            </BrowserRouter>  
+            </Router>  
         );
     }
 }
