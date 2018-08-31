@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../actions';
+import Background from '../images/background.jpg';
 
 class RegisterPage extends React.Component {
     constructor(props) {
@@ -48,7 +49,7 @@ class RegisterPage extends React.Component {
         const { registering, alert  } = this.props;
         const { user, submitted } = this.state;
         return (
-            <div className="container-fluid register-page">
+            <div className="container-fluid register-page" style={backgroundImage}>
                 <div className="row">
                     <div className=" col-12 page-header">
                     <h1 className="logo">Horse Ranker</h1>
@@ -104,6 +105,10 @@ class RegisterPage extends React.Component {
             </div>
         );
     }
+}
+
+var backgroundImage = {
+    backgroundImage: `url(${Background})`
 }
 
 function mapStateToProps(state) {

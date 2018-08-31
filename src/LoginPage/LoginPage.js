@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../actions';
+import Background from '../images/background.jpg';
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class LoginPage extends React.Component {
         const { email, password, submitted } = this.state;
         const { alert } = this.props;
         return (
-            <div className="container-fluid login-page">
+            <div className="container-fluid login-page" style={backgroundImage}>
                 <div className="row">
                     <div className=" col-12 page-header">
                     <h1 className="logo">Horse Ranker</h1>
@@ -87,6 +88,10 @@ class LoginPage extends React.Component {
             </div>    
         );
     }
+}
+
+var backgroundImage = {
+    backgroundImage: `url(${Background})`
 }
 
 function mapStateToProps(state) {
