@@ -9,9 +9,6 @@ Users can select a specific Race at a Specific Racetrack and view a list of the 
 
 ## Features
 - Sort and rank through horse racing statistics.
-- Account register email confirmation.
-- Account password recovery.
-
 
 ## Requirements
 - Node v9.10.1
