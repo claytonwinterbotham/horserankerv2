@@ -11,7 +11,7 @@ class HorseDetailPage extends Component {
         return(
             <div className=" horse-detail-content container-fluid"> 
             <Header />
-            <p className="welcome-message">Welcome {user.email}!</p>   
+            {/* <p className="welcome-message">Welcome {user.email}!</p>    */}
             <div className="row">
                 <div className="col-sm-2">    
                     <Link to="/horsedata" className="btn btn-info back-button">
