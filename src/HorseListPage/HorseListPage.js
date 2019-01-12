@@ -13,7 +13,7 @@ class HorseListPage extends Component {
         return(  
         <div className=" horse-list-content container-fluid"> 
             <Header />  
-            {/* <p className="welcome-message">Welcome {user.email}!</p>   */}
+            <p className="welcome-message">Welcome {user.email}!</p>  
             <div className="row">
                 <div className="col-sm-2">    
                     <Link to="/" className="btn btn-info back-button">

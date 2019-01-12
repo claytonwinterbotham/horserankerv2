@@ -27,13 +27,13 @@ class App extends Component {
         return(
             <Router history={history}>
                 <Switch>
-                    <Route path="/about" component={AboutPage} />
-                    <Route path="/admin" component={AdminPage} />
+                    <PrivateRoute path="/about" component={AboutPage} />
+                    <PrivateRoute path="/admin" component={AdminPage} />
                     <Route path="/login" component={LoginPage} />
                     <Route path="/register" component={RegisterPage} />   
-                    <Route path="/horsedetail" component={HorseDetailPage} />
-                    <Route path="/horsedata" component={HorseListPage} />
-                    <Route exact path="/" component={HomePage} />
+                    <PrivateRoute path="/horsedetail" component={HorseDetailPage} />
+                    <PrivateRoute path="/horsedata" component={HorseListPage} />
+                    <PrivateRoute exact path="/" component={HomePage} />
                 </Switch>    
             </Router>  
         );
